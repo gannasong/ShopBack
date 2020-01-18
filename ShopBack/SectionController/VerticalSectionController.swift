@@ -25,7 +25,7 @@ class VerticalSectionController: ListSectionController {
 
   override func sizeForItem(at index: Int) -> CGSize {
     guard let width = collectionContext?.containerSize.width else { return .zero }
-    return CGSize(width: (width - 30) / 2, height: 210)
+    return CGSize(width: (width - 30) / 2, height: 300)
   }
 
   override func numberOfItems() -> Int {

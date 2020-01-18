@@ -31,9 +31,9 @@ class HomepageListController: CollectionIGListController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    adjustCollectionContentTopInset(with: (44 + 10))
     viewModel = HomepageViewModel()
     bindViewModel()
-
     // 模擬使用者登入，這樣才能接續拿到合法的 token 去打 API
     loginShopBackTestAccount()
   }

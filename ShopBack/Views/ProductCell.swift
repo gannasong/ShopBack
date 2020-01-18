@@ -86,45 +86,45 @@ class ProductCell: UICollectionViewCell {
 
   private func setupSubViews() {
     contentView.addSubview(coverImageView)
-    contentView.addSubview(newPriceLabel)
-    contentView.addSubview(oldPriceLabel)
-    contentView.addSubview(offerTextLabel)
-    contentView.addSubview(voucherTextLabel)
-    contentView.addSubview(viaLabel)
+//    contentView.addSubview(newPriceLabel)
+//    contentView.addSubview(oldPriceLabel)
+//    contentView.addSubview(offerTextLabel)
+//    contentView.addSubview(voucherTextLabel)
+//    contentView.addSubview(viaLabel)
 
     coverImageView.snp.makeConstraints {
       $0.top.left.right.equalToSuperview()
       $0.height.equalTo(100)
     }
 
-    newPriceLabel.snp.makeConstraints {
-      $0.top.equalTo(coverImageView.snp.bottom).offset(-5)
-      $0.height.equalTo(20)
-      $0.left.equalTo(contentView.snp.left).offset(15)
-    }
-
-    oldPriceLabel.snp.makeConstraints {
-      $0.top.equalTo(newPriceLabel.snp.bottom).offset(-5)
-      $0.height.equalTo(20)
-      $0.left.equalTo(contentView.snp.left).offset(15)
-    }
-
-    offerTextLabel.snp.makeConstraints {
-      $0.top.equalTo(oldPriceLabel.snp.bottom).offset(-5)
-      $0.height.equalTo(20)
-      $0.left.equalTo(contentView.snp.left).offset(15)
-    }
-
-    voucherTextLabel.snp.makeConstraints {
-      $0.top.equalTo(offerTextLabel.snp.bottom).offset(-5)
-      $0.height.equalTo(20)
-      $0.left.equalTo(contentView.snp.left).offset(15)
-    }
-
-    viaLabel.snp.makeConstraints {
-      $0.top.equalTo(voucherTextLabel.snp.bottom).offset(-5)
-      $0.height.equalTo(20)
-      $0.left.equalTo(contentView.snp.left).offset(15)
-    }
+//    newPriceLabel.snp.makeConstraints {
+//      $0.top.equalTo(coverImageView.snp.bottom).offset(-5)
+//      $0.height.equalTo(20)
+//      $0.left.equalTo(contentView.snp.left).offset(15)
+//    }
+//
+//    oldPriceLabel.snp.makeConstraints {
+//      $0.top.equalTo(newPriceLabel.snp.bottom).offset(-5)
+//      $0.height.equalTo(20)
+//      $0.left.equalTo(contentView.snp.left).offset(15)
+//    }
+//
+//    offerTextLabel.snp.makeConstraints {
+//      $0.top.equalTo(oldPriceLabel.snp.bottom).offset(-5)
+//      $0.height.equalTo(20)
+//      $0.left.equalTo(contentView.snp.left).offset(15)
+//    }
+//
+//    voucherTextLabel.snp.makeConstraints {
+//      $0.top.equalTo(offerTextLabel.snp.bottom).offset(-5)
+//      $0.height.equalTo(20)
+//      $0.left.equalTo(contentView.snp.left).offset(15)
+//    }
+//
+//    viaLabel.snp.makeConstraints {
+//      $0.top.equalTo(voucherTextLabel.snp.bottom).offset(-5)
+//      $0.height.equalTo(20)
+//      $0.left.equalTo(contentView.snp.left).offset(15)
+//    }
   }
 }

@@ -24,6 +24,7 @@ class CollectionIGListController: UIViewController, BaseCollectionIGListControll
     flowLayout.minimumLineSpacing = 10
     flowLayout.minimumInteritemSpacing = 10
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+    collectionView.isPrefetchingEnabled = false
     collectionView.contentInsetAdjustmentBehavior = .never
     collectionView.alwaysBounceVertical = true
     return collectionView
@@ -52,10 +53,20 @@ class CollectionIGListController: UIViewController, BaseCollectionIGListControll
     adapter.dataSource = self
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    // Deselected the cell in collectionView
+    collectionView.selectItem(at: nil, animated: animated, scrollPosition: [])
+  }
+
+  func adjustCollectionContentTopInset(with topInset: CGFloat) {
+    collectionView.contentInset = UIEdgeInsets(top: topInset, left: 0, bottom: 0, right: 0)
+  }
+
   // MARK: - Private Methods
 
   private func setupViews() {
-    collectionView.backgroundColor = .cyan
+    collectionView.backgroundColor = .tertiarySystemBackground
     collectionView.frame = view.bounds
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     collectionView.collectionViewLayout = UICollectionViewFlowLayout()
