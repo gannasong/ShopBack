@@ -59,6 +59,7 @@ fastlane/screenshots
 fastlane/test_output
 
 # Deployment
+bundler
 .bundle
 builds
 decrypted
