@@ -26,6 +26,8 @@ whitelist_rules:
 
 excluded:
   - Pods
+  - bundler
+  - fastlane
 
 variable_name:
   excluded:
@@ -38,7 +40,7 @@ indentation: 2
 
 type_name:
   excluded:
-    - iCook
+    - ShopBack
 
 force_try:
   severity: error

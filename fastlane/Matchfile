@@ -1,0 +1,12 @@
+git_url("https://#{ENV['GITHUB_SUBMODULES_USER']}@github.com/gannasong/certificates.git")
+
+#git_url("git@github.com:gannasong/certificates.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.gannasong.ShopBack"])
+username("qwer810520@gmail.com") # Your Apple Developer Portal username
+
+# For all available options run `match --help`
