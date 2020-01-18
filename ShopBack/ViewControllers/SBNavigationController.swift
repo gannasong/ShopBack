@@ -39,6 +39,7 @@ class SBNavigationController: UINavigationController {
     searchInputView.snp.makeConstraints {
       $0.centerX.centerY.equalToSuperview()
       $0.width.equalTo(navigationBar.frame.width - (10 * 2))
+      $0.width.equalToSuperview()
       $0.height.equalTo(navigationBar.frame.height)
     }
   }
