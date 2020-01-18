@@ -18,14 +18,14 @@ class VerticalSectionController: ListSectionController {
   override init() {
     super.init()
     inset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
-    minimumLineSpacing = 0
+    minimumLineSpacing = 10
   }
 
   // MARK: - ListSectionController
 
   override func sizeForItem(at index: Int) -> CGSize {
     guard let width = collectionContext?.containerSize.width else { return .zero }
-    return CGSize(width: (width - 30) / 2, height: 300)
+    return CGSize(width: (width - 30) / 2, height: 320)
   }
 
   override func numberOfItems() -> Int {
