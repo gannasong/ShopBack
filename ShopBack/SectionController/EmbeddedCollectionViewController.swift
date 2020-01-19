@@ -37,7 +37,7 @@ class EmbeddedCollectionViewController: ListSectionController {
   override func sizeForItem(at index: Int) -> CGSize {
     switch self.storyType {
       case .article:
-        return CGSize(width: Constants.articleItemWidth, height: Constants.articleItemWidth)
+        return CGSize(width: Constants.articleItemWidth, height: Constants.articleItemHeight)
       default:
         return .zero
     }
@@ -67,7 +67,7 @@ class EmbeddedCollectionViewController: ListSectionController {
   // MARK: - Private Methods
 
   private struct Constants {
-    static let articleItemWidth: CGFloat = 226
-    static let articleItemHeight: CGFloat = 255
+    static let articleItemWidth: CGFloat = UIScreen.main.bounds.size.width * 0.74
+    static let articleItemHeight: CGFloat = 200
   }
 }

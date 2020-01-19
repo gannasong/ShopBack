@@ -20,7 +20,6 @@ class HomepageIGCollectionViewCell: UICollectionViewCell {
     view.alwaysBounceVertical = false
     view.alwaysBounceHorizontal = false
     view.showsHorizontalScrollIndicator = false
-    view.backgroundColor = .white
     return view
   }()
 
@@ -43,9 +42,10 @@ class HomepageIGCollectionViewCell: UICollectionViewCell {
   // MARK: - Private Methods
 
   private func setupSubviews() {
+    collectionView.backgroundColor = .clear
     contentView.addSubview(collectionView)
     collectionView.snp.makeConstraints {
-      $0.top.left.right.bottom.equalToSuperview()
+      $0.top.bottom.right.left.equalToSuperview()
     }
   }
 }

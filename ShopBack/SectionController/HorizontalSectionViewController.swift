@@ -17,7 +17,7 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
   private var storyType: StoryType = .none
 
   struct Constant {
-    static let articleItemHeight: CGFloat = 270
+    static let articleItemHeight: CGFloat = 204
   }
 
   lazy var adapter: ListAdapter = {
@@ -40,6 +40,7 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
     switch storyType {
       case .article:
         let height = collectionViewItemHeight(storyType: storyType)
+        print(">>>>> width: \(width), height: \(height)")
         return CGSize(width: width, height: height)
       default:
       break

@@ -66,7 +66,8 @@ class CollectionIGListController: UIViewController, BaseCollectionIGListControll
   // MARK: - Private Methods
 
   private func setupViews() {
-    collectionView.backgroundColor = .tertiarySystemBackground
+    collectionView.backgroundColor = .secondarySystemBackground
+//    collectionView.backgroundColor = .yellow // <<<< test use
     collectionView.frame = view.bounds
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     collectionView.collectionViewLayout = UICollectionViewFlowLayout()

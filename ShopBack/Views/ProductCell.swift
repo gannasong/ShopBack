@@ -120,7 +120,7 @@ class ProductCell: UICollectionViewCell {
   // MARK: - Private Methods
 
   private func setupSubViews() {
-    contentView.backgroundColor = .secondarySystemBackground
+    contentView.backgroundColor = .white
     layer.cornerRadius = 8
     clipsToBounds = true
 
