@@ -42,6 +42,9 @@
 		495F90E023AE7D7300EA302F /* APIManager+Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F90DF23AE7D7300EA302F /* APIManager+Product.swift */; };
 		495F90E223AF4A0800EA302F /* VerticalSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F90E123AF4A0800EA302F /* VerticalSectionController.swift */; };
 		495F90E423AF4BC000EA302F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F90E323AF4BC000EA302F /* ProductCell.swift */; };
+		497B343A23D574560035D76D /* APIManager+Cashbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343923D574560035D76D /* APIManager+Cashbacks.swift */; };
+		497B343C23D578710035D76D /* Cashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343B23D578710035D76D /* Cashback.swift */; };
+		497B343E23D57EC10035D76D /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343D23D57EC10035D76D /* Amount.swift */; };
 		4990290123AB1F0B0016FE16 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290023AB1F0B0016FE16 /* UserSession.swift */; };
 		4990290323AB4F420016FE16 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290223AB4F410016FE16 /* Member.swift */; };
 		4990290523AB5B3E0016FE16 /* PhoneInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290423AB5B3E0016FE16 /* PhoneInfo.swift */; };
@@ -111,6 +114,9 @@
 		495F90DF23AE7D7300EA302F /* APIManager+Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Product.swift"; sourceTree = "<group>"; };
 		495F90E123AF4A0800EA302F /* VerticalSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSectionController.swift; sourceTree = "<group>"; };
 		495F90E323AF4BC000EA302F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		497B343923D574560035D76D /* APIManager+Cashbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Cashbacks.swift"; sourceTree = "<group>"; };
+		497B343B23D578710035D76D /* Cashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashback.swift; sourceTree = "<group>"; };
+		497B343D23D57EC10035D76D /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		4990290023AB1F0B0016FE16 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		4990290223AB4F410016FE16 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		4990290423AB5B3E0016FE16 /* PhoneInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInfo.swift; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 				495F8D3C23AC9E1000EA302F /* Article.swift */,
 				495F90AD23AE5A1A00EA302F /* Story.swift */,
 				495F90DD23AE7A2A00EA302F /* Product.swift */,
+				497B343B23D578710035D76D /* Cashback.swift */,
+				497B343D23D57EC10035D76D /* Amount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 				4990290623AB5C750016FE16 /* APIManager+Banner.swift */,
 				495F8D3A23AC9B4D00EA302F /* APIManager+Articles.swift */,
 				495F90DF23AE7D7300EA302F /* APIManager+Product.swift */,
+				497B343923D574560035D76D /* APIManager+Cashbacks.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -596,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39DC118023C5A7260048D54C /* UIColor+ShopBack.swift in Sources */,
+				497B343C23D578710035D76D /* Cashback.swift in Sources */,
 				495F8D3D23AC9E1000EA302F /* Article.swift in Sources */,
 				4990290723AB5C750016FE16 /* APIManager+Banner.swift in Sources */,
 				39DC117023C5A6200048D54C /* SBNavigationController.swift in Sources */,
@@ -614,6 +624,7 @@
 				39DC118123C5A7260048D54C /* UIView+ShopBack.swift in Sources */,
 				492BDBDA23A9CF8000A57169 /* AccountManager.swift in Sources */,
 				495F90AE23AE5A1A00EA302F /* Story.swift in Sources */,
+				497B343E23D57EC10035D76D /* Amount.swift in Sources */,
 				492BE0BD23AB19D100A57169 /* APIManager+Members.swift in Sources */,
 				49902C8A23ABC70A0016FE16 /* ViewModelType.swift in Sources */,
 				495F90E023AE7D7300EA302F /* APIManager+Product.swift in Sources */,
@@ -634,6 +645,7 @@
 				492BD99623A93EAE00A57169 /* APIManager+Account.swift in Sources */,
 				492BD99223A91D9300A57169 /* APIType.swift in Sources */,
 				495F90DE23AE7A2B00EA302F /* Product.swift in Sources */,
+				497B343A23D574560035D76D /* APIManager+Cashbacks.swift in Sources */,
 				4959194F23AFBC780003FA0B /* Nuke+UIImageView.swift in Sources */,
 				49307C4623B0B5000028272F /* ArticleCell.swift in Sources */,
 				39DC117423C5A6BC0048D54C /* MainSearchTextField.swift in Sources */,

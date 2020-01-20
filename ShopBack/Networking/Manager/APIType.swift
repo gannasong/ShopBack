@@ -21,12 +21,18 @@ enum APIType {
   case fetchHomepageBanner
   case fetchHomepageArticle(page: Int)
   case fetchHomepageProduct
+
+  // Cashbacks
+  case fetchCashbackAmounts
 }
 
 extension APIType: UserSession, TargetType {
 
   var baseURL: URL {
-    return URL(string: "https://api-app.shopback.com.tw/")!
+    guard let url = URL(string: "https://api-app.shopback.com.tw/") else {
+      fatalError("💥 BaseURL is nil")
+    }
+    return url
   }
 
   var path: String {
@@ -39,6 +45,7 @@ extension APIType: UserSession, TargetType {
       case .fetchHomepageBanner: return "mobile/banners"
       case .fetchHomepageArticle: return "mobile/wordpress-posts"
       case .fetchHomepageProduct: return "mobile-content/v1/components/5dd3b7a0dbaead21d7b0e17d"
+      case .fetchCashbackAmounts: return "cashbacks/latest"
     }
   }
 
@@ -77,7 +84,7 @@ extension APIType: UserSession, TargetType {
           "limit": "10",
           "offset": "0"
         ]
-      case .fetchHomepageBanner, .fetchMemberData:
+      case .fetchHomepageBanner, .fetchMemberData, .fetchCashbackAmounts:
         break
     }
 
@@ -95,12 +102,20 @@ extension APIType: UserSession, TargetType {
   }
 
   var headers: [String : String]? {
-    return [
+    var headers = [
       "x-shopback-agent": shopbackAgent,
       "x-shopback-key": shopbackKey,
       "x-shopback-client-user-agent": clientUserAgent,
       "x-shopback-domain": shopbackDomain,
     ]
+
+    switch self {
+      case .fetchCashbackAmounts:
+        headers["authorization"] = "JWT \(authAccessToken)"
+        print(">>>>> authAccessToken: \(authAccessToken)")
+      default: break
+    }
+    return headers
   }
 
 }

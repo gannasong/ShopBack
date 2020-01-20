@@ -37,6 +37,11 @@ extension UserSession {
     return token
   }
 
+  var authAccessToken: String {
+    let token = AccountManager.shared.authAccessToken()
+    assert(!token.isEmpty, "💥 - Auth access token shouldn't be null string.")
+    return token
+  }
   var shopbackDomain: String {
     return "www.shopback.com.tw"
   }

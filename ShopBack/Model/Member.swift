@@ -9,7 +9,6 @@
 import Foundation
 
 struct Member: Codable {
-
   let accountId: Int
   let email: String
   let fullName: String

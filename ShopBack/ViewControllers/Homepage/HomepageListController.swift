@@ -44,6 +44,10 @@ class HomepageListController: CollectionIGListController {
     fetchContentTrigger.onNext(())
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+  }
+
   // MARK: - Private Methods
 
   private func loginShopBackTestAccount() {
