@@ -30,8 +30,7 @@ final class HomepageViewModel: NSObject {
     let bannerRequest = APIManager.shared.fetchHomepageBanner()
     let articlesRequest = APIManager.shared.fetchHomepageArticle()
     let productRequest = APIManager.shared.fetchHomepageProduct()
-//    sectionRequest = Observable.zip(bannerRequest, articlesRequest, productRequest) { [$0, $1, $2] }
-    sectionRequest = Observable.zip(articlesRequest, productRequest) { [$0, $1] }
+    sectionRequest = Observable.zip(bannerRequest, articlesRequest, productRequest) { [$0, $1, $2] }
   }
 }
 

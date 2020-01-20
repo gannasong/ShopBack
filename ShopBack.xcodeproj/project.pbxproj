@@ -45,6 +45,7 @@
 		497B343A23D574560035D76D /* APIManager+Cashbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343923D574560035D76D /* APIManager+Cashbacks.swift */; };
 		497B343C23D578710035D76D /* Cashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343B23D578710035D76D /* Cashback.swift */; };
 		497B343E23D57EC10035D76D /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343D23D57EC10035D76D /* Amount.swift */; };
+		497B346C23D59A3D0035D76D /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B346B23D59A3D0035D76D /* BannerCell.swift */; };
 		4990290123AB1F0B0016FE16 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290023AB1F0B0016FE16 /* UserSession.swift */; };
 		4990290323AB4F420016FE16 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290223AB4F410016FE16 /* Member.swift */; };
 		4990290523AB5B3E0016FE16 /* PhoneInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290423AB5B3E0016FE16 /* PhoneInfo.swift */; };
@@ -117,6 +118,7 @@
 		497B343923D574560035D76D /* APIManager+Cashbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Cashbacks.swift"; sourceTree = "<group>"; };
 		497B343B23D578710035D76D /* Cashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashback.swift; sourceTree = "<group>"; };
 		497B343D23D57EC10035D76D /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
+		497B346B23D59A3D0035D76D /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		4990290023AB1F0B0016FE16 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		4990290223AB4F410016FE16 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		4990290423AB5B3E0016FE16 /* PhoneInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInfo.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				495F90E323AF4BC000EA302F /* ProductCell.swift */,
 				49307C4123B0AE730028272F /* HomepageIGCollectionViewCell.swift */,
 				49307C4523B0B5000028272F /* ArticleCell.swift */,
+				497B346B23D59A3D0035D76D /* BannerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				4959194F23AFBC780003FA0B /* Nuke+UIImageView.swift in Sources */,
 				49307C4623B0B5000028272F /* ArticleCell.swift in Sources */,
 				39DC117423C5A6BC0048D54C /* MainSearchTextField.swift in Sources */,
+				497B346C23D59A3D0035D76D /* BannerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

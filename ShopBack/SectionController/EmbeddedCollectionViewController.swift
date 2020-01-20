@@ -13,6 +13,7 @@ class EmbeddedCollectionViewController: ListSectionController {
 
   var item: Any?
   var article: Article?
+  var banner: Banner?
   var storyType: StoryType = .none
 
   // MARK: - Initialization
@@ -27,7 +28,7 @@ class EmbeddedCollectionViewController: ListSectionController {
     self.item = item
     self.storyType = storyType
     switch storyType {
-      case .article:
+      case .article, .banner:
         inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
       default:
         inset = .zero
@@ -38,6 +39,8 @@ class EmbeddedCollectionViewController: ListSectionController {
     switch self.storyType {
       case .article:
         return CGSize(width: Constants.articleItemWidth, height: Constants.articleItemHeight)
+      case .banner:
+        return CGSize(width: Constants.bannerItemWidth, height: Constants.bannerItemHeight)
       default:
         return .zero
     }
@@ -53,21 +56,36 @@ class EmbeddedCollectionViewController: ListSectionController {
           cell.configure(with: article)
         }
         return cell
+      case .banner:
+        guard let cell = collectionContext?.dequeueReusableCell(of: BannerCell.self, for: self, at: index) as? BannerCell else {
+          return UICollectionViewCell()
+        }
+        if let banner = item as? Banner {
+          cell.configure(with: banner)
+        }
+        return cell
       default:
         return UICollectionViewCell()
     }
-    return UICollectionViewCell()
   }
 
   override func didUpdate(to object: Any) {
     print("Embedded object: \(object)")
-    item = object as? Article
+    switch storyType {
+      case .article:
+        item = object as? Article
+      case .banner:
+        item = object as? Banner
+      default: return
+    }
   }
 
   // MARK: - Private Methods
 
   private struct Constants {
-    static let articleItemWidth: CGFloat = UIScreen.main.bounds.size.width * 0.74
+    static let articleItemWidth: CGFloat = UIScreen.main.bounds.size.width * 0.75
     static let articleItemHeight: CGFloat = 200
+    static let bannerItemWidth: CGFloat = UIScreen.main.bounds.size.width * 0.75
+    static let bannerItemHeight: CGFloat = 330
   }
 }

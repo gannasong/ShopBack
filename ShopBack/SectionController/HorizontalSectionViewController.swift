@@ -18,6 +18,7 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
 
   struct Constant {
     static let articleItemHeight: CGFloat = 204
+    static let bannerItemHeight: CGFloat = 334
   }
 
   lazy var adapter: ListAdapter = {
@@ -40,7 +41,9 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
     switch storyType {
       case .article:
         let height = collectionViewItemHeight(storyType: storyType)
-        print(">>>>> width: \(width), height: \(height)")
+        return CGSize(width: width, height: height)
+      case .banner:
+        let height = collectionViewItemHeight(storyType: storyType)
         return CGSize(width: width, height: height)
       default:
       break
@@ -51,11 +54,12 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
   override func cellForItem(at index: Int) -> UICollectionViewCell {
     guard let storyType = story?.type else { return UICollectionViewCell() }
     switch storyType {
-      case .article:
+      case .article, .banner:
         guard let cell = collectionContext?.dequeueReusableCell(of: HomepageIGCollectionViewCell.self, for: self, at: index) as? HomepageIGCollectionViewCell else {
           return UICollectionViewCell()
         }
         adapter.collectionView = cell.collectionView
+//        cell.backgroundColor = UIColor.yellow
         return cell
       default:
       return UICollectionViewCell()
@@ -84,6 +88,8 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
         print("Horizontal 近來 article")
         // 役要改 EmbeddedCollectionViewController 傳入的東西
         return EmbeddedCollectionViewController(withStoryType: .article, withItme: story)
+      case .banner:
+        return EmbeddedCollectionViewController(withStoryType: .banner, withItme: story)
       default:
         return ListSectionController()
     }
@@ -100,6 +106,8 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
     switch storyType {
       case .article:
         return Constant.articleItemHeight
+      case .banner:
+        return Constant.bannerItemHeight
       default:
         return 0
     }

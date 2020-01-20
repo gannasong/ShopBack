@@ -46,6 +46,14 @@ class HomepageListController: CollectionIGListController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    APIManager.shared.fetchHomepageBanner()
+      .asObservable()
+      .subscribe(onNext: { (story) in
+        let banners = story.items as? [Banner]
+        print("%%%%%: \(banners?.first?.mobileImage)")
+      }, onError: { (error) in
+        print(error)
+      }).disposed(by: disposeBag)
   }
 
   // MARK: - Private Methods
@@ -99,7 +107,7 @@ extension HomepageListController {
     switch storyType {
       case .product:
         return VerticalSectionController()
-      case .article:
+      case .article, .banner:
         return HorizontalSectionViewController()
       default:
         return ListSectionController()
