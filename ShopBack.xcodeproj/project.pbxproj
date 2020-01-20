@@ -46,6 +46,8 @@
 		497B343C23D578710035D76D /* Cashback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343B23D578710035D76D /* Cashback.swift */; };
 		497B343E23D57EC10035D76D /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B343D23D57EC10035D76D /* Amount.swift */; };
 		497B346C23D59A3D0035D76D /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B346B23D59A3D0035D76D /* BannerCell.swift */; };
+		497B346E23D5AB090035D76D /* APIManager+Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B346D23D5AB090035D76D /* APIManager+Trip.swift */; };
+		497B347023D5AE240035D76D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B346F23D5AE240035D76D /* Trip.swift */; };
 		4990290123AB1F0B0016FE16 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290023AB1F0B0016FE16 /* UserSession.swift */; };
 		4990290323AB4F420016FE16 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290223AB4F410016FE16 /* Member.swift */; };
 		4990290523AB5B3E0016FE16 /* PhoneInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990290423AB5B3E0016FE16 /* PhoneInfo.swift */; };
@@ -119,6 +121,8 @@
 		497B343B23D578710035D76D /* Cashback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashback.swift; sourceTree = "<group>"; };
 		497B343D23D57EC10035D76D /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		497B346B23D59A3D0035D76D /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		497B346D23D5AB090035D76D /* APIManager+Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Trip.swift"; sourceTree = "<group>"; };
+		497B346F23D5AE240035D76D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		4990290023AB1F0B0016FE16 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		4990290223AB4F410016FE16 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		4990290423AB5B3E0016FE16 /* PhoneInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInfo.swift; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 				495F90DD23AE7A2A00EA302F /* Product.swift */,
 				497B343B23D578710035D76D /* Cashback.swift */,
 				497B343D23D57EC10035D76D /* Amount.swift */,
+				497B346F23D5AE240035D76D /* Trip.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				4990290623AB5C750016FE16 /* APIManager+Banner.swift */,
+				497B346D23D5AB090035D76D /* APIManager+Trip.swift */,
 				495F8D3A23AC9B4D00EA302F /* APIManager+Articles.swift */,
 				495F90DF23AE7D7300EA302F /* APIManager+Product.swift */,
 				497B343923D574560035D76D /* APIManager+Cashbacks.swift */,
@@ -613,6 +619,7 @@
 				4990290723AB5C750016FE16 /* APIManager+Banner.swift in Sources */,
 				39DC117023C5A6200048D54C /* SBNavigationController.swift in Sources */,
 				49902C8823ABC5DB0016FE16 /* HomepageViewModel.swift in Sources */,
+				497B346E23D5AB090035D76D /* APIManager+Trip.swift in Sources */,
 				49902C5B23ABBD5E0016FE16 /* CollectionIGListController.swift in Sources */,
 				495F90AA23AE577A00EA302F /* HorizontalSectionViewController.swift in Sources */,
 				49902C5823ABBCF60016FE16 /* HomepageListController.swift in Sources */,
@@ -642,6 +649,7 @@
 				4990290323AB4F420016FE16 /* Member.swift in Sources */,
 				495F90E223AF4A0800EA302F /* VerticalSectionController.swift in Sources */,
 				39DC117B23C5A6CE0048D54C /* SPIndicator.swift in Sources */,
+				497B347023D5AE240035D76D /* Trip.swift in Sources */,
 				492BD5E823A8D48400A57169 /* SceneDelegate.swift in Sources */,
 				492BDBE323A9F5B300A57169 /* AuthTokens.swift in Sources */,
 				4990290523AB5B3E0016FE16 /* PhoneInfo.swift in Sources */,

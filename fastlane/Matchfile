@@ -4,7 +4,7 @@ git_url("https://#{ENV['GITHUB_SUBMODULES_USER']}@github.com/gannasong/certifica
 
 storage_mode("git")
 
-type("development") # The default type, can be: appstore, adhoc, enterprise or development
+type(["development", "appstore"]) # The default type, can be: appstore, adhoc, enterprise or development
 
 app_identifier(["com.gannasong.ShopBack"])
 username("qwer810520@gmail.com") # Your Apple Developer Portal username

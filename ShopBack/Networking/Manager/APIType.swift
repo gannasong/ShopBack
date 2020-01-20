@@ -18,6 +18,7 @@ enum APIType {
   case fetchMemberData
 
   // Product
+  case fetchHomepageTrip
   case fetchHomepageBanner
   case fetchHomepageArticle(page: Int)
   case fetchHomepageProduct
@@ -42,6 +43,7 @@ extension APIType: UserSession, TargetType {
       case .signInWithEmail: return "members/sign-in"
       case .fetchMemberData: return "members/me"
       // Homepage
+      case .fetchHomepageTrip: return "mobile-content/v1/components/5d6aa42df1f1ce3e49650aff"
       case .fetchHomepageBanner: return "mobile/banners"
       case .fetchHomepageArticle: return "mobile/wordpress-posts"
       case .fetchHomepageProduct: return "mobile-content/v1/components/5dd3b7a0dbaead21d7b0e17d"
@@ -72,6 +74,12 @@ extension APIType: UserSession, TargetType {
           "email": AccountManager.shared.email(),
           "password": password,
           "client_user_agent": clientUserAgent
+        ]
+      case .fetchHomepageTrip:
+        parameters = [
+          "displayType": "random",
+          "limit": "10",
+          "offset": "0"
         ]
       case let .fetchHomepageArticle(page):
         parameters = [

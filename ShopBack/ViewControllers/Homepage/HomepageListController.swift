@@ -46,14 +46,7 @@ class HomepageListController: CollectionIGListController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    APIManager.shared.fetchHomepageBanner()
-      .asObservable()
-      .subscribe(onNext: { (story) in
-        let banners = story.items as? [Banner]
-        print("%%%%%: \(banners?.first?.mobileImage)")
-      }, onError: { (error) in
-        print(error)
-      }).disposed(by: disposeBag)
+//    APIManager.shared.fetchHomepageTrip()
   }
 
   // MARK: - Private Methods
