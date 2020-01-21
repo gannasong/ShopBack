@@ -8,3 +8,13 @@
 
 import Foundation
 import RxSwift
+
+extension APIManager {
+  func fetchHomepageTrip() -> Observable<Story> {
+    return provider.rx.request(.fetchHomepageTrip)
+      .asObservable()
+      .filterSuccessfulStatusCodes()
+      .map([Trip].self, atKeyPath: Keys.data.rawValue)
+      .parseObjectToStory(type: .trip)
+  }
+}

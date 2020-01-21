@@ -46,7 +46,6 @@ class HomepageListController: CollectionIGListController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-//    APIManager.shared.fetchHomepageTrip()
   }
 
   // MARK: - Private Methods
@@ -87,7 +86,6 @@ extension HomepageListController {
 
   override func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
     guard let items = viewModel?.items.value else { return [] }
-    // 這邊會拿到首頁每一個 section 的資料 -> [ShopBack.Story, ShopBack.Story]
     print("Homepage items: \(items)")
     return items
   }
@@ -100,7 +98,7 @@ extension HomepageListController {
     switch storyType {
       case .product:
         return VerticalSectionController()
-      case .article, .banner:
+      case .trip, .article, .banner:
         return HorizontalSectionViewController()
       default:
         return ListSectionController()

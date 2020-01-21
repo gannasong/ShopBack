@@ -27,10 +27,11 @@ final class HomepageViewModel: NSObject {
   // MARK: - Private Methods
 
   private func setupObservers() {
+    let tripRequest = APIManager.shared.fetchHomepageTrip()
     let bannerRequest = APIManager.shared.fetchHomepageBanner()
     let articlesRequest = APIManager.shared.fetchHomepageArticle()
     let productRequest = APIManager.shared.fetchHomepageProduct()
-    sectionRequest = Observable.zip(bannerRequest, articlesRequest, productRequest) { [$0, $1, $2] }
+    sectionRequest = Observable.zip(tripRequest, bannerRequest, articlesRequest, productRequest) { [$0, $1, $2, $3] }
   }
 }
 

@@ -9,14 +9,14 @@
 import UIKit
 
 extension UIViewController {
-    func createImage(from size: CGSize, with color: UIColor) -> UIImage? {
-        UIGraphicsBeginImageContext(size)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        context.setFillColor(color.cgColor)
-        context.fill(CGRect(origin: .zero, size: size))
+  func createImage(from size: CGSize, with color: UIColor) -> UIImage? {
+    UIGraphicsBeginImageContext(size)
+    guard let context = UIGraphicsGetCurrentContext() else { return nil }
+    context.setFillColor(color.cgColor)
+    context.fill(CGRect(origin: .zero, size: size))
 
-        let viewImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return viewImage
-    }
+    let viewImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return viewImage
+  }
 }

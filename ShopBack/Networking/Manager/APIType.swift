@@ -78,7 +78,7 @@ extension APIType: UserSession, TargetType {
       case .fetchHomepageTrip:
         parameters = [
           "displayType": "random",
-          "limit": "10",
+          "limit": "6",
           "offset": "0"
         ]
       case let .fetchHomepageArticle(page):

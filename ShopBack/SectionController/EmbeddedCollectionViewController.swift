@@ -12,15 +12,12 @@ import IGListKit
 class EmbeddedCollectionViewController: ListSectionController {
 
   var item: Any?
-  var article: Article?
-  var banner: Banner?
   var storyType: StoryType = .none
 
   // MARK: - Initialization
 
   override init() {
     super.init()
-
   }
 
   convenience init(withStoryType storyType: StoryType, withItme item: Any) {
@@ -28,7 +25,7 @@ class EmbeddedCollectionViewController: ListSectionController {
     self.item = item
     self.storyType = storyType
     switch storyType {
-      case .article, .banner:
+      case .article, .banner, .trip:
         inset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
       default:
         inset = .zero
@@ -41,6 +38,8 @@ class EmbeddedCollectionViewController: ListSectionController {
         return CGSize(width: Constants.articleItemWidth, height: Constants.articleItemHeight)
       case .banner:
         return CGSize(width: Constants.bannerItemWidth, height: Constants.bannerItemHeight)
+      case .trip:
+        return CGSize(width: Constants.tripItemWidth, height: Constants.tripItemHeight)
       default:
         return .zero
     }
@@ -64,6 +63,15 @@ class EmbeddedCollectionViewController: ListSectionController {
           cell.configure(with: banner)
         }
         return cell
+      case .trip:
+        guard let cell = collectionContext?.dequeueReusableCell(of: TripCell.self, for: self, at: index) as? TripCell else {
+          return UICollectionViewCell()
+        }
+        if let trip = item as? Trip {
+          print(">>>>> : \(trip.id)")
+          cell.configure(with: trip)
+        }
+        return cell
       default:
         return UICollectionViewCell()
     }
@@ -76,6 +84,8 @@ class EmbeddedCollectionViewController: ListSectionController {
         item = object as? Article
       case .banner:
         item = object as? Banner
+      case .trip:
+        item = object as? Trip
       default: return
     }
   }
@@ -87,5 +97,7 @@ class EmbeddedCollectionViewController: ListSectionController {
     static let articleItemHeight: CGFloat = 200
     static let bannerItemWidth: CGFloat = UIScreen.main.bounds.size.width * 0.75
     static let bannerItemHeight: CGFloat = 330
+    static let tripItemWidth: CGFloat = UIScreen.main.bounds.size.width * 0.36
+    static let tripItemHeight: CGFloat = 261
   }
 }

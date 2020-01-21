@@ -14,6 +14,7 @@ enum StoryType {
   case banner
   case article
   case product
+  case trip
 }
 
 class Story {

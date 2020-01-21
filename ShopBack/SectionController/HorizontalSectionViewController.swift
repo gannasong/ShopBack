@@ -19,6 +19,7 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
   struct Constant {
     static let articleItemHeight: CGFloat = 204
     static let bannerItemHeight: CGFloat = 334
+    static let tripItemHeight: CGFloat = 265
   }
 
   lazy var adapter: ListAdapter = {
@@ -45,6 +46,9 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
       case .banner:
         let height = collectionViewItemHeight(storyType: storyType)
         return CGSize(width: width, height: height)
+      case .trip:
+        let height = collectionViewItemHeight(storyType: storyType)
+        return CGSize(width: width, height: height)
       default:
       break
     }
@@ -53,13 +57,13 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
 
   override func cellForItem(at index: Int) -> UICollectionViewCell {
     guard let storyType = story?.type else { return UICollectionViewCell() }
+    print("###########: \(storyType)")
     switch storyType {
-      case .article, .banner:
+      case .article, .banner, .trip:
         guard let cell = collectionContext?.dequeueReusableCell(of: HomepageIGCollectionViewCell.self, for: self, at: index) as? HomepageIGCollectionViewCell else {
           return UICollectionViewCell()
         }
         adapter.collectionView = cell.collectionView
-//        cell.backgroundColor = UIColor.yellow
         return cell
       default:
       return UICollectionViewCell()
@@ -85,15 +89,15 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
     print("Horizontal object: \(object)")
     switch self.storyType {
       case .article:
-        print("Horizontal 近來 article")
-        // 役要改 EmbeddedCollectionViewController 傳入的東西
-        return EmbeddedCollectionViewController(withStoryType: .article, withItme: story)
+        // 要改 EmbeddedCollectionViewController 傳入的東西
+        return EmbeddedCollectionViewController(withStoryType: .article, withItme: story as Any)
       case .banner:
-        return EmbeddedCollectionViewController(withStoryType: .banner, withItme: story)
+        return EmbeddedCollectionViewController(withStoryType: .banner, withItme: story as Any)
+      case .trip:
+        return EmbeddedCollectionViewController(withStoryType: .trip, withItme: story as Any)
       default:
         return ListSectionController()
     }
-    return ListSectionController()
   }
 
   func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -108,6 +112,8 @@ class HorizontalSectionViewController: ListSectionController, ListAdapterDataSou
         return Constant.articleItemHeight
       case .banner:
         return Constant.bannerItemHeight
+      case .trip:
+        return Constant.tripItemHeight
       default:
         return 0
     }
