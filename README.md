@@ -17,7 +17,9 @@
 
 ## Screenshots
 
+<p align= "center">
 <img alt="01" src="screenshots/homepage.png" width="280">&nbsp;
+</p>
 
 ## Technologies
 
